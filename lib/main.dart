@@ -1,5 +1,6 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
-import 'package:themee/Navigator_/page_One.dart';
 import 'package:themee/TextField_/text_field_.dart';
 import 'package:themee/Theme_/theme_.dart';
 
@@ -15,13 +16,19 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        textTheme: TextTheme(
+          headline4: TextStyle(color: Colors.red),
+          headline5: TextStyle(color: Colors.red),
+        ),
+      ),
 
-      // initialRoute: Mytextfield_.path,
-      // routes: {
-      //   Mytextfield_.path: (context) => Mytextfield_(),
-      //   MyTheme_.path: (context) => const MyTheme_(),
-      // },
-      home: Mypageone_(),
+      initialRoute: '/MyTheme_',
+      routes: {
+        '/Mytextfield_': (context) => Mytextfield_(),
+        '/MyTheme_': (context) => MyTheme_(),
+      },
+      // home: Mytextfield_(),
     );
   }
 }
